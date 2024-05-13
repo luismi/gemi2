@@ -17,4 +17,5 @@ EXPOSE 8501
 ENV STREAMLIT_SERVER_PORT=8501
 
 # Run app.py when the container launches
-CMD ["streamlit", "playwright\ install", "run", "app.py"]
+
+CMD ["playwright", "install", "streamlit", "run", "app.py"]
