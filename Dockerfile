@@ -22,4 +22,4 @@ ENV STREAMLIT_SERVER_PORT=8501
 
 # Run app.py when the container launches
 
-CMD ["playwright", "install", "chromium", "streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "app.py"]
