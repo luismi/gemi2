@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,4 +17,4 @@ EXPOSE 8501
 ENV STREAMLIT_SERVER_PORT=8501
 
 # Run app.py when the container launches
-CMD ["playwright install","streamlit", "run", "--server.port", "8501", "app.py"]
+CMD ["playwright\ install","streamlit", "run", "--server.port", "8501", "app.py"]
