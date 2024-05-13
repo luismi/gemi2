@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requeriments.txt
 # Install playwright and then its dependencies (the browsers)
 RUN pip install playwright
 RUN playwright install
+RUN playwright install-deps
 
 # Make port 8501 available to the world outside this container
 EXPOSE 8501
