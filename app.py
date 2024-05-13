@@ -7,7 +7,7 @@ from scrapegraphai.graphs import SmartScraperGraph
 openai_access_token = st.text_input("OpenAI API Key", type="password")
 
 if openai_access_token:
-    model = "gemini-1.0-pro-002"
+    model = "gemini-pro"
     
     graph_config = {
         "llm": {
