@@ -10,6 +10,10 @@ COPY . /app
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requeriments.txt
 
+# Install playwright and then its dependencies (the browsers)
+RUN pip install playwright
+RUN playwright install
+
 # Make port 8501 available to the world outside this container
 EXPOSE 8501
 
