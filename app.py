@@ -2,6 +2,7 @@
 import google.generativeai as genai
 import streamlit as st
 from scrapegraphai.graphs import SmartScraperGraph
+from scrapegraphai.utils import prettify_exec_info
 
 # Get OpenAI API key from user
 openai_access_token = st.text_input("OpenAI API Key", type="password")
