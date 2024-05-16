@@ -17,8 +17,7 @@ if openai_access_token:
     graph_config = {
         "llm": {
             "api_key": openai_access_token,
-            "model": model,
-            "headless": False
+            "model": model
         },
     }
     # Get the URL of the website to scrape
@@ -59,6 +58,6 @@ if openai_access_token:
     if st.button("Scrape"):
         result = smart_scraper_graph.run()
         st.write("# Respuesta")
-        st.write(graph_result)
-        add_download_options(graph_result)
+        st.write(result)
+        add_download_options(result)
         
