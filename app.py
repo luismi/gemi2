@@ -12,7 +12,7 @@ openai_access_token = st.text_input("OpenAI API Key", type="password")
 
 
 if openai_access_token:
-    model = "gemini-1.5-flash-latest"
+    model = "gemini-pro"
     
     graph_config = {
         "llm": {
