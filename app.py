@@ -10,7 +10,26 @@ from scrapegraphai.graphs import SmartScraperGraph
 # Get OpenAI API key from user
 openai_access_token = st.text_input("OpenAI API Key", type="password")
 
+# Added downloads buttons
+def add_download_options(result: str):
+    """
+    Adds download buttons for graph result.
+    """
+    st.download_button(
+        label="Download JSON",
+        data=json.dumps(result, indent=4),
+        file_name="scraped_data.json",
+        mime="application/json"
+    )
 
+    df = pd.DataFrame(result)
+    csv = df.to_csv(index=False)
+    st.download_button(
+        label="Download CSV",
+        data=csv,
+        file_name="scraped_data.csv",
+        mime="text/csv"
+    )
 if openai_access_token:
     model = "gemini-pro"
     
@@ -32,28 +51,7 @@ if openai_access_token:
         source=url,
         config=graph_config
     )
-
-    # Added downloads buttons
-    def add_download_options(result: str):
-        """
-        Adds download buttons for graph result.
-        """
-        st.download_button(
-            label="Download JSON",
-            data=json.dumps(result, indent=4),
-            file_name="scraped_data.json",
-            mime="application/json"
-        )
-
-        df = pd.DataFrame(result)
-        csv = df.to_csv(index=False)
-        st.download_button(
-            label="Download CSV",
-            data=csv,
-            file_name="scraped_data.csv",
-            mime="text/csv"
-        )
-        
+            
     # Scrape the website
     if st.button("Scrape"):
         result = smart_scraper_graph.run()
