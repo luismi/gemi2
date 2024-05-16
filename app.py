@@ -18,6 +18,7 @@ if openai_access_token:
         "llm": {
             "api_key": openai_access_token,
             "model": model,
+            "headless": False
         },
     }
     # Get the URL of the website to scrape
